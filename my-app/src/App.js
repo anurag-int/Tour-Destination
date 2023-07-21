@@ -1,26 +1,22 @@
-import React from "react";   
+import React from "react";
 import { useState } from "react";
 import "./App.css";
 import data from "./data";
 import Tours from "./components/Tours";
 
-const  App = () => {
-
-
-  
+const App = () => {
   const [tours, setTours] = useState(data);
- 
+
   function removeTour(id) {
-    const newTours = tours.filter( tour  => tour.id !==id);
+    const newTours = tours.filter(tour => tour.id !== id);
     setTours(newTours);
   }
 
-  return(
+  return (
     <div>
-      <Tours></Tours>
+      <Tours tours={tours} removeTour={removeTour} />
     </div>
-  )
-}
+  );
+};
 
 export default App;
-   

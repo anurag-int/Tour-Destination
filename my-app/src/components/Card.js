@@ -1,16 +1,16 @@
 import { useState } from "react";
-const Card = ({id, name, info, price, image, removeTour}) => {
+const Card = ({ id, name, info, price, image, removeTour }) => {
 
     const [readmore, setReadmore] = useState(false);
-    const description = `${info.subString(0,200)}....`;
+    const description = `${String(info).substring(0, 200)}...`;
 
-    function readmoreHandler(){
+    function readmoreHandler() {
         setReadmore(!readmore);
     }
 
-      return(
+    return (
         <div className="card">
-            <img src={image} className="image">"Image</img>
+            <img src={image} alt="tour card" className="image" />
             <div className="tour-info">
                 <div className="tour-details">
                     <h4 className="tour-price">{price}</h4>
@@ -23,12 +23,12 @@ const Card = ({id, name, info, price, image, removeTour}) => {
                     </span>
                 </div>
             </div>
-            
-             
-            <button className="btn-red" onClick={()=> removeTour(id)}>Not Interested</button>
+
+
+            <button className="btn-red" onClick={() => removeTour(id)}>Not Interested</button>
         </div>
 
     );
-}
+};
 
 export default Card;

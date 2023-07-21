@@ -1,5 +1,4 @@
 import Card from "./Card"
-import { useState } from "react";
 const Tours = ({tours, removeTour}) => {
 
     return (

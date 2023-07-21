@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 const Card = ({id, name, info, price, image, removeTour}) => {
 
     const [readmore, setReadmore] = useState(false);
